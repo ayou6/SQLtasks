@@ -205,3 +205,35 @@ CREATE TABLE inventory (
 
 
 	drop table Books
+
+
+
+
+	CREATE TABLE sales (
+		sale_id INT PRIMARY KEY,
+		sale_date DATE,
+		sale_amount DECIMAL(10,2)
+);
+	INSERT INTO sales ( sale_id,sale_date, sale_amount)
+	VALUES
+		(1,'2022-01-01', 100.00),
+		(2,'2022-01-02', 50.00),
+		(3,'2022-01-15', 75.00),
+		(4,'2022-02-01', 200.00),
+		(5,'2022-02-05', 150.00),
+		(6,'2022-02-20', 175.00);
+
+		SELECT MONTH(sale_date) AS month, SUM(sale_amount) AS total_sales FROM sales
+			GROUP BY month;
+
+			SELECT AVG(sale_amount) AS average_sales FROM sales;
+
+			SELECT MIN(sale_amount) AS lowest_amount, MAX(sale_amount) AS highest_amount FROM sales;
+
+			SELECT sale_id, sale_date, sale_amount FROM sales ORDER BY sale_id DESC;
+
+			SELECT sale_id, sale_date, sale_amount FROM sales WHERE sale_date BETWEEN '2022-01-01' AND '2022-01-02';
+
+
+
+
