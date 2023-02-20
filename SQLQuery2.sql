@@ -16,6 +16,12 @@ CREATE TABLE Employees (
 		INSERT INTO Employees (Name,age, salary)
 			VALUES ('Michael Brown','41','71000.00');
 
+		UPDATE Employees SET salary = 31000.49 WHERE salary = 55000.50;
+		
+
+		DELETE FROM Employees WHERE salary > 55000.50;
+
+
 	drop table Employees
 
 
@@ -40,6 +46,7 @@ CREATE TABLE Books (
 
 	Select *from Books 
 	SELECT title FROM books WHERE price > 10.00;
+	
 
 
 CREATE TABLE students (
@@ -48,25 +55,29 @@ CREATE TABLE students (
 	age INT,
 	Major text,
 	GPA float,
+	student_email text,
 );
 
-		INSERT INTO students (Name, age,Major,GPA)
-			VALUES ('John Smith','22','Computer Science' ,' 3.8');
+		INSERT INTO students (Name, age,Major,GPA,student_email)
+			VALUES ('John Smith','22','Computer Science' ,' 3.8','jhon@gmail.com' );
 
-		INSERT INTO students (Name, age,Major,GPA)
-			VALUES ('Sarah Johnson','20','Biology' ,' 3.2');
+		INSERT INTO students (Name, age,Major,GPA,student_email)
+			VALUES ('Sarah Johnson','20','Biology' ,' 3.2','sarah@gmail.com');
 
-		INSERT INTO students (Name, age,Major,GPA)
-			VALUES (' Michael Brown','24','Business' ,' 3.5');
+		INSERT INTO students (Name, age,Major,GPA,student_email)
+			VALUES (' Michael Brown','24','Business' ,' 3.5','michael@gmail.com');
 
-		INSERT INTO students (Name, age,Major,GPA)
-			VALUES ('Emily Wilson','21','English' ,' 3.9');
+		INSERT INTO students (Name, age,Major,GPA,student_email))
+			VALUES ('Emily Wilson','21','English' ,' 3.9','emily@gmail.com');
 
-		INSERT INTO students (Name, age,Major,GPA)
-			VALUES ('David Lee','23','Psychology' ,' 3.6');
+		INSERT INTO students (Name, age,Major,GPA,student_email)
+			VALUES ('David Lee','23','Psychology' ,' 3.6','david@gmail.com');
 
 	Select *from students 
 	SELECT name,ID, age, major, GPA FROM students WHERE GPA > 3.5;
+
+		DELETE FROM students WHERE Name = 'David Lee';
+
 
 
 
@@ -118,6 +129,8 @@ CREATE TABLE customers (
 
 	Select *from customers
 		drop table customers
+		DELETE FROM customers WHERE customer_ID = 2;
+
 
 
 
@@ -186,3 +199,9 @@ CREATE TABLE inventory (
 			VALUES ('3','Nike Air Max 90','Nike Inc.', 'Apparel' ,'5', '119.99');
 
 	Select *from inventory
+
+
+
+
+
+	drop table Books
