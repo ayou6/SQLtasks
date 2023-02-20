@@ -71,6 +71,8 @@ CREATE TABLE students (
 
 
 
+
+
 CREATE TABLE orders (
 	ID INT NOT NULL IDENTITY Primary key, 
 	product_name   text,
@@ -94,6 +96,10 @@ CREATE TABLE orders (
 	WHERE orders.order_date >= '2023-02-13';
 
 
+
+
+
+
 CREATE TABLE customers (
 	customer_ID  INT,
 	customer_name  text,
@@ -112,3 +118,71 @@ CREATE TABLE customers (
 
 	Select *from customers
 		drop table customers
+
+
+
+
+CREATE TABLE products (
+	product_ID   INT,
+	product_name  text,
+	category text,
+    price decimal,
+	quantity_in_stock  INT,
+);
+
+		INSERT INTO products (product_ID, product_name,category,price,quantity_in_stock)
+			VALUES ('1','iPhone','Electronics' ,' 999.99','100');
+
+		INSERT INTO products (product_ID, product_name,category,price,quantity_in_stock)
+		VALUES ('2','Samsung Galaxy','Electronics','799.99','50');
+
+		INSERT INTO products (product_ID, product_name,category,price,quantity_in_stock)
+		VALUES ('3','Nike Air Max','Shoes' ,' 119.99','200');
+
+	Select *from products
+
+
+
+
+CREATE TABLE movies (
+	movie_id integer primary key,
+	movie_title text,
+	director text,
+	genre text,
+	release_year int,
+);
+
+		INSERT INTO movies (movie_id, movie_title,director,genre,release_year)
+			VALUES ('1','The Shawshank Redemption','Frank Darabont' ,'Drama','1994');
+
+		INSERT INTO movies (movie_id, movie_title,director,genre,release_year)
+		VALUES ('2','The Godfather','Francis Ford Coppola','Drama','1972');
+
+		INSERT INTO movies (movie_id, movie_title,director,genre,release_year)
+		VALUES ('3','The Dark Knight','Christopher Nolan','Action','2008');
+
+	Select *from movies
+
+
+
+
+
+CREATE TABLE inventory (
+	product_ID   INT primary key,
+	product_name  text,
+	supplier text,
+	category text,
+	quantity INT,
+    price real,
+);
+
+		INSERT INTO inventory (product_ID, product_name, supplier ,category,quantity,price)
+			VALUES ('1','iPhone 13','Apple Inc.','Electronics' ,'10',' 999.99');
+
+		INSERT INTO inventory (product_ID, product_name, supplier ,category,quantity,price)
+			VALUES ('2','Kindle Paperwhite','Amazon','Books & Media' ,'20',' 129.99');
+
+		INSERT INTO inventory (product_ID, product_name, supplier ,category,quantity,price)
+			VALUES ('3','Nike Air Max 90','Nike Inc.', 'Apparel' ,'5', '119.99');
+
+	Select *from inventory
